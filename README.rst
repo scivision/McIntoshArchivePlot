@@ -8,6 +8,29 @@ code from https://www2.hao.ucar.edu/mcintosh-archive/plotting-software
 copied to Github for easier finding of the program and to make slight GDL (free open source IDL-compatible) changes.
  
  
+Prereqs
+=======
+
+* `GDL <https://www.scivision.co/compiling-gdl-gnudatalanguage-on-ubuntu/>`_ (free open source IDL compatible) or IDL
+* `data files <https://www.ngdc.noaa.gov/stp/space-weather/solar-data/solar-imagery/composites/synoptic-maps/mc-intosh/ptmc_level3/ptmc_level3_fits/>`_
+
+ 
+Usage
+=====
+
+using `1997-12 data file <https://www.ngdc.noaa.gov/stp/space-weather/solar-data/solar-imagery/composites/synoptic-maps/mc-intosh/ptmc_level3/ptmc_level3_fits/ptmc_compo_sm_19971226_040108_cr1931_l3.fits.gz>`_
+
+from inside GDL/IDL::
+
+    plotfinal
+
+
+or from the command line
+
+.. code:: bash
+
+    gdl -e plotfinal
+
  
 Programs
 ========
