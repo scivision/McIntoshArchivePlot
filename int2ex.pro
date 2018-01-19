@@ -1,5 +1,6 @@
-; https://hesperia.gsfc.nasa.gov/ssw/soho/mdi/idl_old/gen/ys_util/int2ex.pro
-PRO Int2Ex, msod, ds79, time, error=error
+; http://www.heliodocs.com/php/xdoc_print.php?file=$SSW/gen/idl/genutil/int2ex.pro
+
+	PRO Int2Ex, msod, ds79, time, nomod=nomod, error=error
 ;							16-Nov-92
 ;+
 ;  Name:
@@ -16,6 +17,9 @@ PRO Int2Ex, msod, ds79, time, error=error
 ;	time= 7 element integer array containing, in order,
 ;		hr min sec msec day mon yr
 ;	error - set on error in arguments
+;  Keywords:
+;	NOMOD - returns four digit output for year column in external format by NOT taking
+;	the year mod 100.
 ;  Side Effects:
 ;	Results are always in the form of a 2-dimensional array,
 ;	even if input is scalar.
@@ -28,6 +32,11 @@ PRO Int2Ex, msod, ds79, time, error=error
 ;				   a large input variable.
 ;	31-oct-93, ras, eliminated loop for yr,month,day by using jdcnv
 ;	16-nov-93, ras, added error keyword
+;	12-sep-97, richard.schwartz@gsfc.nasa.gov, added nomod keyword
+;	to fully support longword input for ds79 and changed action
+;	of scalar block of code to be consistent with column vector action.
+;	Version 7, richard.schwartz@gsfc.nasa.gov, 9-sep-1998. 
+;		Revised documentation.
 ;-
 ;	-------------------------------------------------------------
 	ON_ERROR, 2		;return to caller if an error occurs	
@@ -49,12 +58,14 @@ PRO Int2Ex, msod, ds79, time, error=error
 
 	CASE 1 OF
 	  (ndim EQ 0):	BEGIN	;input is scalar
-			  a = msod
-			  msod = LONARR(1,1)
-			  msod(0,0) = a
-			  a = ds79
-			  ds79 = INTARR(1,1)
-			  ds79(0,0) = a 
+			  msod = reform(msod(*),1,1)
+			  ds79 = reform(ds79(*),1,1)
+			  ;a = msod
+			  ;msod = LONARR(1,1)
+			  ;msod(0,0) = a
+			  ;a = ds79
+			  ;ds79 = INTARR(1,1)
+			  ;ds79(0,0) = a 
 			  nele = 1
 			END
 	  (ndim EQ 1):  BEGIN	;input is a column vector
@@ -87,7 +98,7 @@ PRO Int2Ex, msod, ds79, time, error=error
 	time(3,0) = msod - secs*LONG(1000)		;msec
         time(4,0) = dom					;day of month
 	time(5,0) = month
-	time(6,0) = yr mod 100
+	if not keyword_set(nomod) then time(6,0) = yr mod 100 else time(6,0) = yr
 
 	msod = sav_msod
 	ds79 = sav_ds79
