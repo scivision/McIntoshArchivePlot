@@ -323,7 +323,7 @@ if scalingx lt .99 or scalingy lt .99 or scalingx gt 1.02 or scalingy gt 1.02 th
   print,scalingx,scalingy
  endif
 endif
-if scalingx lt .95 or scalingy lt .95 then d=dialog(/WARNING,'Interpolated image lower resolution than original')
+if scalingx lt .95 or scalingy lt .95 then printf,-2,'WARNING: Interpolated image lower resolution than original'
 
 finalimage_scale=congrid(finalimage_crop,dimxscale,dimyscale)
 
