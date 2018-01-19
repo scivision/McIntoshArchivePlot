@@ -129,6 +129,8 @@ if file_exist(nameconvent+'_l3.fits') then fnameuse=nameconvent+'_l3.fits' else 
   endelse
 endelse
 
+print,fnameuse
+
 mreadfits,fnameuse,header,image
 
 ;
