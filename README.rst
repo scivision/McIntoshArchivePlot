@@ -1,5 +1,8 @@
-# McIntoshArchivePlot
- McA Plotting Software: make plots from Final (Level 3) FITS files for McIntosh synoptic maps for a given Carrington rotation (CROT) number.
+===================
+McIntoshArchivePlot
+===================
+
+McA Plotting Software: make plots from Final (Level 3) FITS files for McIntosh synoptic maps for a given Carrington rotation (CROT) number.
  
 code from https://www2.hao.ucar.edu/mcintosh-archive/plotting-software
 copied to Github for easier finding of the program and to make slight GDL (free open source IDL-compatible) changes.
@@ -160,4 +163,8 @@ same as choice = 1, but with addition of rose as 15th color, representing negati
 McIntosh Archive of Synoptic Maps
 
 
+Notes
+=====
+
+* `article on McIntosh Archive Project <https://eos.org/research-spotlights/preserving-a-45-year-record-of-sunspots?utm_source=eos&utm_medium=email&utm_campaign=EosBuzz011918>`_
 
