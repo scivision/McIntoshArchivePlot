@@ -120,7 +120,8 @@ if keyword_set(dirname) then nameconvent=dirname+'/'+nameconvent
 ;
 ; First the main data/header--
 ; this is the cropped data that can be used for analysis
-;
+
+print,nameconvent
 
 if file_exist(nameconvent+'_l3.fits') then fnameuse=nameconvent+'_l3.fits' else begin
   if file_exist(nameconvent+'_l3.fits.gz') then fnameuse=nameconvent+'_l3.fits.gz'  else begin
