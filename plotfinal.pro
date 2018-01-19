@@ -71,6 +71,8 @@ pro plotfinal,crot=crot,dirname=dirname,scalecrop=scalecrop,dodisplay=dodisplay,
 ;		Only set up for GRIDANNOT plots
 ;		Default 0 (no)
 
+!PATH=!PATH+':utils/'
+
 default,crot,1931
 default,scalecrop,0.09
 scalecrop=float(scalecrop)
