@@ -1,5 +1,6 @@
-; https://hesperia.gsfc.nasa.gov/ssw/soho/mdi/idl_old/gen/ys_util/ex2int.pro
-PRO Ex2Int, time, msod, ds79
+; http://www.heliodocs.com/php/xdoc_print.php?file=$SSW/gen/idl/genutil/ex2int.pro
+
+	PRO Ex2Int, time, msod, ds79, NOMOD=NOMOD
 ;							17-mar-92
 ;+
 ;  Name:
@@ -14,7 +15,11 @@ PRO Ex2Int, time, msod, ds79
 ;		hr min sec msec day mon yr
 ;  Output:
 ;	msod= 4-byte integer: milliseconds of the day
-;	ds79= 2-byte integer: number of days since 1-Jan-1979
+;	ds79= 4-byte integer: number of days since 1-Jan-1979
+;  Keywords:
+;	NOMOD - Do NOT take
+;	the year mod 100 from the external format time year column..
+;	Same meaning under INT2EX.
 ;  Side Effects:
 ;	
 ;  Restrictions:
@@ -28,6 +33,9 @@ PRO Ex2Int, time, msod, ds79
 ;	17-mar-92, Modified, JRL: Made for loop index long type.
 ;	Modified to use all vector operations, ras, 93/6/7
 ;       Modified to correctly deal with years GE 2000, jmm, 7/28/94
+;	13-sep-97, richard.schwartz@gsfc.nasa.gov, added NOMOD
+;	Version 8, richard.schwartz@gsfc.nasa.gov, 9-sep-1998. 
+;		Revised documentation.
 ;-
 ;	-------------------------------------------------------------
 	ON_ERROR, 2		;return to caller if an error occurs	
@@ -55,9 +63,10 @@ PRO Ex2Int, time, msod, ds79
 ;	Find day number from 1-1-1979 epoch.
 ;	VALID FROM 1950-2049
 	year = [indgen(50)+2000, indgen(50)+1950]
-
-	yy = year( time(6, *) MOD 100 ) ;Jmm, 28-jul-94 for years 2000 and beyond (i.e., time(6,*) gt 100 ) correctly...
         
+	if not keyword_set(nomod)  then $
+	  yy = year( time(6, *) MOD 100 ) $;Jmm, 28-jul-94 for years 2000 and beyond (i.e., time(6,*) gt 100 ) correctly...
+	  else yy = time(6,*)        
 	jdcnv, 	yy, fix(time(5,*)), fix(time(4,*)), 0.0, jd
 	ds79 = long(jd - 2443874.5d)+1 ;
 
