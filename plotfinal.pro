@@ -157,8 +157,8 @@ patmapcolortable,r,g,b,choice=choice
 ; and make grid
 ;
 print,header
-dimx=header.naxis1
-dimy=header.naxis2
+dimx=header.fullax1
+dimy=header.fullax2
 
 xgrid=intarr(dimx,dimy)
 ygrid=intarr(dimx,dimy)
