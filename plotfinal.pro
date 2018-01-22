@@ -103,7 +103,7 @@ filename='CR'+strtrim(string(crot),2)
 ; set up name for input files
 
 if crot ne 1503 then begin
-  date=anytim(carr2ex(crot),ccsds=1)
+  date=anytim(carr2ex(crot), /ccsds)
 endif else date='1966-01-09T09:36:08.64'
 yyyy=strmid(date,0,4)
 mm=strmid(date,5,2)
@@ -432,7 +432,7 @@ if dogrid eq 1 then begin
 
    bangstart=header.B0
    bangstart=round(bangstart*100.)/100.
-   datestop=anytim(carr2ex(crot+1.), ccsds=1)
+   datestop=anytim(carr2ex(crot+1.), /ccsds)
    bangend=pb0r(datestop)
    bangend=round(bangend[1]*100.)/100.
 
