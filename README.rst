@@ -15,30 +15,37 @@ Prereqs
 =======
 
 * `data files <https://www.ngdc.noaa.gov/stp/space-weather/solar-data/solar-imagery/composites/synoptic-maps/mc-intosh/ptmc_level3/ptmc_level3_fits/>`_
-* IDL `Astronomy Library <https://idlastro.gsfc.nasa.gov/>`_.  
-* tested with IDL 8.2 and 8.6.
+* IDL `Astronomy Library <https://idlastro.gsfc.nasa.gov/>`_   extracted to ``~/astrolib``
+* tested with IDL 8.2, 8.4 and 8.6.
 
 
 `GDL <https://www.scivision.co/compiling-gdl-gnudatalanguage-on-ubuntu/>`_ 
 >= 0.9.7 required if not using IDL (GDL is free open-source).
+Right now, GDL is giving black plots, which may be a glitch in GDL plotting as these plots are complex.
+That's just a guess, however.
+
+For now, use IDL.
  
 Usage
 =====
 
 using `1997-12 data file <https://www.ngdc.noaa.gov/stp/space-weather/solar-data/solar-imagery/composites/synoptic-maps/mc-intosh/ptmc_level3/ptmc_level3_fits/ptmc_compo_sm_19971226_040108_cr1931_l3.fits.gz>`_
 
-from inside GDL/IDL::
+from IDL::
 
     !PATH=!PATH+':utils/'+':'+Expand_Path('+~/astrolib/')
 
     plotfinal
+    
+    
+The first line may be added to your IDLDE Path if you don't want to type that each time, under Preferences -> IDL -> Paths.
 
 
-or from the command line
+or, from the command line (assuming the Paths are set in IDL already):
 
 .. code:: bash
 
-    gdl -e plotfinal
+    idl -e plotfinal
 
  
 Programs
