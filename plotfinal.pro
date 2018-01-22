@@ -123,8 +123,8 @@ if keyword_set(dirname) then nameconvent=dirname+'/'+nameconvent
 
 print,nameconvent
 
-if file_exist(nameconvent+'_l3.fits') then fnameuse=nameconvent+'_l3.fits' else begin
-  if file_exist(nameconvent+'_l3.fits.gz') then fnameuse=nameconvent+'_l3.fits.gz'  else begin
+if file_test(nameconvent+'_l3.fits') then fnameuse=nameconvent+'_l3.fits' else begin
+  if file_test(nameconvent+'_l3.fits.gz') then fnameuse=nameconvent+'_l3.fits.gz'  else begin
    print,'Neither '+nameconvent+'_l3.fits nor '+nameconvent+'_l3.fits.gz exist.'
    goto,abort
   endelse

@@ -121,7 +121,7 @@ nf=n_elements(files)
 quiet=keyword_set(quiet)
 silent=quiet or keyword_set(silent)
 
-IF not file_exist(files[0]) THEN BEGIN
+IF not file_test(files[0]) THEN BEGIN
     gzp=strpos(files,'.gz')
     wgz=where(gzp GT 0,ngz,complement=wnogz)
     IF gzp[0] GT 0 THEN BEGIN
@@ -163,7 +163,7 @@ good=-1
 
 for i=0l,nf-1 do begin
 
-    IF not file_exist(files[i]) THEN BEGIN
+    IF not file_test(files[i]) THEN BEGIN
     	message,files[i]+' not found; skipping',/info
 	help,i
 	wait,1
