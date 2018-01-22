@@ -5,7 +5,8 @@ McIntoshArchivePlot
 McA Plotting Software: make plots from Final (Level 3) FITS files for McIntosh synoptic maps for a given Carrington rotation (CROT) number.
  
 code from https://www2.hao.ucar.edu/mcintosh-archive/plotting-software
-copied to Github for easier finding of the program and to make slight GDL (free open source IDL-compatible) changes.
+
+updated code to use standard Astrolib functions and to begin working on GDL (free open-source IDL replacement).
  
 .. image:: data/CR1931_final_gridannot_miss_chbound.gif
 
@@ -17,17 +18,9 @@ Prereqs
 * IDL `Astronomy Library <https://idlastro.gsfc.nasa.gov/>`_.  
 * tested with IDL 8.2 and 8.6.
 
-Unfortunately,
+
 `GDL <https://www.scivision.co/compiling-gdl-gnudatalanguage-on-ubuntu/>`_ 
-is not working at this time, the error is
-
-    Invalid extension header encountered
-    XTENSION keyword missing
-    Only 0 extensions processed
-    FITS_READ ERROR: EOF encountered
-
-on GDL 0.9.7.
-
+>= 0.9.7 required if not using IDL (GDL is free open-source).
  
 Usage
 =====
