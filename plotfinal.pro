@@ -133,6 +133,7 @@ endelse
 image = mrdfits(fnameuse,0,headertxt)
  
 header = fitshead2struct(headertxt,/SILENT)
+;rdfits_struct,fnameuse,/HEADER_ONLY,header 
 
 ;
 ; now the auxiliary fits files
@@ -142,10 +143,14 @@ header = fitshead2struct(headertxt,/SILENT)
 ; these can be used to generate the various plot versions
 ;
 
-fits_read,fnameuse,finalimage_save,exten_no=1
-fits_read,fnameuse,longitude,exten_no=2
-fits_read,fnameuse,latitude,exten_no=3
-fits_read,fnameuse,polarity,exten_no=4
+;fits_read,fnameuse,finalimage_save,exten_no=1
+finalimage_save = readfits(fnameuse,exten_no=1,/SILENT)
+;fits_read,fnameuse,longitude,exten_no=2
+longitude = readfits(fnameuse,exten_no=2,/SILENT)
+;fits_read,fnameuse,latitude,exten_no=3
+latitude = readfits(fnameuse,exten_no=3,/SILENT)
+;fits_read,fnameuse,polarity,exten_no=4
+polarity = readfits(fnameuse,exten_no=4,/SILENT)
 
 ;
 ; load the colortable
