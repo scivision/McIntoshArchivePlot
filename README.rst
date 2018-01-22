@@ -7,13 +7,27 @@ McA Plotting Software: make plots from Final (Level 3) FITS files for McIntosh s
 code from https://www2.hao.ucar.edu/mcintosh-archive/plotting-software
 copied to Github for easier finding of the program and to make slight GDL (free open source IDL-compatible) changes.
  
+.. image:: data/CR1931_final_gridannot_miss_chbound.gif
+
  
 Prereqs
 =======
 
-* `GDL <https://www.scivision.co/compiling-gdl-gnudatalanguage-on-ubuntu/>`_ (free open source IDL compatible) or IDL
 * `data files <https://www.ngdc.noaa.gov/stp/space-weather/solar-data/solar-imagery/composites/synoptic-maps/mc-intosh/ptmc_level3/ptmc_level3_fits/>`_
-* IDL `Astronomy Library <https://idlastro.gsfc.nasa.gov/>`_
+* IDL `Astronomy Library <https://idlastro.gsfc.nasa.gov/>`_.  
+* tested with IDL 8.2 and 8.6.
+
+Unfortunately,
+`GDL <https://www.scivision.co/compiling-gdl-gnudatalanguage-on-ubuntu/>`_ 
+is not working at this time, the error is
+
+    Invalid extension header encountered
+    XTENSION keyword missing
+    Only 0 extensions processed
+    FITS_READ ERROR: EOF encountered
+
+on GDL 0.9.7.
+
  
 Usage
 =====
