@@ -121,7 +121,6 @@ if keyword_set(dirname) then nameconvent=dirname+'/'+nameconvent
 ; First the main data/header--
 ; this is the cropped data that can be used for analysis
 
-print,nameconvent
 
 if file_test(nameconvent+'_l3.fits') then fnameuse=nameconvent+'_l3.fits' else begin
   if file_test(nameconvent+'_l3.fits.gz') then fnameuse=nameconvent+'_l3.fits.gz'  else begin
@@ -130,9 +129,10 @@ if file_test(nameconvent+'_l3.fits') then fnameuse=nameconvent+'_l3.fits' else b
   endelse
 endelse
 
-print,fnameuse
 
-image = mrdfits(fnameuse,0,header)
+image = mrdfits(fnameuse,0,headertxt)
+ 
+header = fitshead2struct(headertxt)
 
 ;
 ; now the auxiliary fits files
@@ -156,9 +156,9 @@ patmapcolortable,r,g,b,choice=choice
 ; get info from header
 ; and make grid
 ;
-
-dimx=header.fullax1
-dimy=header.fullax2
+print,header
+dimx=header.naxis1
+dimy=header.naxis2
 
 xgrid=intarr(dimx,dimy)
 ygrid=intarr(dimx,dimy)

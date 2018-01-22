@@ -36,6 +36,8 @@ using `1997-12 data file <https://www.ngdc.noaa.gov/stp/space-weather/solar-data
 
 from inside GDL/IDL::
 
+    !PATH=!PATH+':utils/'+':'+Expand_Path('+~/astrolib/')
+
     plotfinal
 
 
