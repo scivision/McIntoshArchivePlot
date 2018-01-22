@@ -13,7 +13,7 @@ Prereqs
 
 * `GDL <https://www.scivision.co/compiling-gdl-gnudatalanguage-on-ubuntu/>`_ (free open source IDL compatible) or IDL
 * `data files <https://www.ngdc.noaa.gov/stp/space-weather/solar-data/solar-imagery/composites/synoptic-maps/mc-intosh/ptmc_level3/ptmc_level3_fits/>`_
-
+* IDL `Astronomy Library <https://idlastro.gsfc.nasa.gov/>`_
  
 Usage
 =====
