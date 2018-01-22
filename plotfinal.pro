@@ -132,7 +132,7 @@ endelse
 
 image = mrdfits(fnameuse,0,headertxt)
  
-header = fitshead2struct(headertxt)
+header = fitshead2struct(headertxt,/SILENT)
 
 ;
 ; now the auxiliary fits files
