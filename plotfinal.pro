@@ -132,7 +132,7 @@ endelse
 
 print,fnameuse
 
-mreadfits,fnameuse,header,image
+image = mrdfits(fnameuse,0,header)
 
 ;
 ; now the auxiliary fits files
