@@ -13,6 +13,11 @@ addons:
     packages:
       - gnudatalanguage
 
+install:
+  - mkdir ~/astrolib
+  - wget https://idlastro.gsfc.nasa.gov/ftp/astron.dir.tar.gz
+  - tar -xf astron.dir.tar.gz -C ~/astrolib
+
 script:
   - gdl -e @test
 
