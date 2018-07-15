@@ -13,7 +13,8 @@ Updated code to use standard Astrolib functions and to begin working on GDL (fre
 * [data files](https://www.ngdc.noaa.gov/stp/space-weather/solar-data/solar-imagery/composites/synoptic-maps/mc-intosh/ptmc_level3/ptmc_level3_fits/)
 * IDL [Astronomy Library](https://idlastro.gsfc.nasa.gov/) extracted to `~/astrolib`
 * tested with IDL 8.2, 8.4 and 8.6.
-* [GDL](https://www.scivision.co/compiling-gdl-gnudatalanguage-on-ubuntu/) &ge; 0.9.7 required if not using IDL (GDL is free open-source).  Note that `doannot=0` argument to `plotfinal` is required for GDL to make the plot.
+* [GDL](https://www.scivision.co/compiling-gdl-gnudatalanguage-on-ubuntu/) &ge; 0.9.7 required if not using IDL (GDL is free open-source) (GDL 0.9.6 does not work, but 0.9.7 does).  
+  Note that `doannot=0` argument to `plotfinal` is required for GDL to make the plot.
 
 ## Usage
 
