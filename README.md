@@ -3,42 +3,40 @@
 # McIntosh Archive Plot
 
 McA Plotting Software: make plots from Final (Level 3) FITS files for McIntosh synoptic maps for a given Carrington rotation (CROT) number.
-
-
-updated code to use standard Astrolib functions and to begin working on GDL (free open-source IDL replacement).
+Updated code to use standard Astrolib functions and to begin working on GDL (free open-source IDL replacement).
 
 ![image](data/CR1931_final_gridannot_miss_chbound.gif)
 
 ## Prereqs
 
-- [data files](https://www.ngdc.noaa.gov/stp/space-weather/solar-data/solar-imagery/composites/synoptic-maps/mc-intosh/ptmc_level3/ptmc_level3_fits/)
-- IDL [Astronomy Library](https://idlastro.gsfc.nasa.gov/) extracted to `~/astrolib`
-- tested with IDL 8.2, 8.4 and 8.6.
-
-[GDL](https://www.scivision.co/compiling-gdl-gnudatalanguage-on-ubuntu/) &ge; 0.9.7 required if not using IDL (GDL is free open-source). 
-Right now, GDL is giving black plots, which may be a glitch in GDL plotting as these plots are complex. 
-That's just a guess, however.
-
-For now, use IDL.
+* [data files](https://www.ngdc.noaa.gov/stp/space-weather/solar-data/solar-imagery/composites/synoptic-maps/mc-intosh/ptmc_level3/ptmc_level3_fits/)
+* IDL [Astronomy Library](https://idlastro.gsfc.nasa.gov/) extracted to `~/astrolib`
+* tested with IDL 8.2, 8.4 and 8.6.
+* [GDL](https://www.scivision.co/compiling-gdl-gnudatalanguage-on-ubuntu/) &ge; 0.9.7 required if not using IDL (GDL is free open-source).  Note that `doannot=0` argument to `plotfinal` is required for GDL to make the plot.
 
 ## Usage
 
 using [1997-12 data file](https://www.ngdc.noaa.gov/stp/space-weather/solar-data/solar-imagery/composites/synoptic-maps/mc-intosh/ptmc_level3/ptmc_level3_fits/ptmc_compo_sm_19971226_040108_cr1931_l3.fits.gz)
 
-from IDL:
+from IDL/GDL:
 
     !PATH=!PATH+':utils/'+':'+Expand_Path('+~/astrolib/pro')
 
     plotfinal, dirname="data"
 
-The first line may be added to your IDLDE Path if you don't want to
-type that each time, under Preferences -> IDL -> Paths.
+The first line may be added to your IDLDE Path if you don't want to type that each time, under Preferences -> IDL -> Paths.
 
-or, from the command line (assuming the Paths are set in IDL already):
+or, from the command line (assuming the Paths are set in IDL already). 
+This writes a GIF of the plot.
 
 ```sh
-idl -e plotfinal
+idl -e plotfinal, dirname="data"
 ```
+
+### Colormap
+
+    patmapcolortable,r,g,b
+
 
 ## Programs
 

@@ -1,5 +1,6 @@
 pro patmapcolortable,r,g,b,choice=choice
 
+!PATH=!PATH+':utils/'
 
 ; choice 0 -- original color table
 ; choice 1 -- custom 1

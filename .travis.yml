@@ -1,4 +1,6 @@
-language: python
+language: generic
+sudo: required
+dist: xenial
 group: travis_latest
 
 git:
@@ -8,18 +10,24 @@ git:
 os:
   - linux
 
-addons:
-  apt:
-    packages:
-      - gnudatalanguage
+#addons:
+#  apt:
+#    packages:
+#      - gnudatalanguage
 
+
+# FIXME: temporary for travis xenial
+before_install:
+  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+  - sudo apt-get update -q
+  - sudo apt-get install -yq gnudatalanguage
+  
 install:
   - mkdir ~/astrolib
   - wget https://idlastro.gsfc.nasa.gov/ftp/astron.dir.tar.gz
   - tar -xf astron.dir.tar.gz -C ~/astrolib
 
 script:
-  - gdl -e @test
-
-
+  - gdl -e @test2
+  - gdl -e @test1
 
