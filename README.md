@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.com/scivision/McIntoshArchivePlot.svg?branch=master)](https://travis-ci.com/scivision/McIntoshArchivePlot)
+[![Build status](https://ci.appveyor.com/api/projects/status/rta2e1v6n2ug2696?svg=true)](https://ci.appveyor.com/project/scivision/mcintosharchiveplot)
 
 # McIntosh Archive Plot
 
