@@ -10,7 +10,7 @@ before_build:
 
 build: off
 
-test_script:
+after_build:
 - gdl -e @test2
 - gdl -e @test1
 
