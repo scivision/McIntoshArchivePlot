@@ -1,0 +1,20 @@
+language: python
+group: travis_latest
+
+git:
+  depth: 3
+  quiet: true
+
+os:
+  - linux
+
+addons:
+  apt:
+    packages:
+      - gnudatalanguage
+
+script:
+  - gdl -e @test
+
+
+

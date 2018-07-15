@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/scivision/McIntoshArchivePlot.svg?branch=master)](https://travis-ci.com/scivision/McIntoshArchivePlot)
+
 # McIntosh Archive Plot
 
 McA Plotting Software: make plots from Final (Level 3) FITS files for McIntosh synoptic maps for a given Carrington rotation (CROT) number.
@@ -9,7 +11,7 @@ updated code to use standard Astrolib functions and to begin working on GDL (fre
 
 ## Prereqs
 
-- [data iles](https://www.ngdc.noaa.gov/stp/space-weather/solar-data/solar-imagery/composites/synoptic-maps/mc-intosh/ptmc_level3/ptmc_level3_fits/)
+- [data files](https://www.ngdc.noaa.gov/stp/space-weather/solar-data/solar-imagery/composites/synoptic-maps/mc-intosh/ptmc_level3/ptmc_level3_fits/)
 - IDL [Astronomy Library](https://idlastro.gsfc.nasa.gov/) extracted to `~/astrolib`
 - tested with IDL 8.2, 8.4 and 8.6.
 
