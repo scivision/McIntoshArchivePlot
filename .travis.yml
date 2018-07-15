@@ -20,7 +20,6 @@ os:
 before_install:
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo apt-get update -q
-  - sleep 3;  # race condition
   - sudo apt-get install -yq gnudatalanguage
   
 install:
