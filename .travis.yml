@@ -8,7 +8,7 @@ git:
   quiet: true
 
 os:
-  - linux
+- linux
 
 #addons:
 #  apt:
@@ -18,16 +18,15 @@ os:
 
 # FIXME: temporary for travis xenial
 before_install:
-  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-  - sudo apt-get update -q
-  - sudo apt-get install -yq gnudatalanguage
+- sudo apt-get -yq update > /dev/null
+- sudo apt-get install -yq --no-install-suggests --no-install-recommends gnudatalanguage > /dev/null
   
 install:
-  - mkdir ~/astrolib
-  - wget https://idlastro.gsfc.nasa.gov/ftp/astron.dir.tar.gz
-  - tar -xf astron.dir.tar.gz -C ~/astrolib
+- mkdir ~/astrolib
+- wget https://idlastro.gsfc.nasa.gov/ftp/astron.dir.tar.gz
+- tar -xf astron.dir.tar.gz -C ~/astrolib
 
 script:
-  - gdl -e @test2
-  - gdl -e @test1
+- gdl -e @test2
+- gdl -e @test1
 
