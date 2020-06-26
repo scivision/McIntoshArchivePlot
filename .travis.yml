@@ -1,22 +1,15 @@
-language: generic
-sudo: required
-dist: xenial
+language: minimal
 group: travis_latest
 
 git:
-  depth: 3
+  depth: 25
   quiet: true
-
-os:
-- linux
 
 #addons:
 #  apt:
 #    packages:
 #      - gnudatalanguage
 
-
-# FIXME: temporary for travis xenial
 before_install:
 - sudo apt-get -yq update > /dev/null
 - sudo apt-get install -yq --no-install-suggests --no-install-recommends gnudatalanguage > /dev/null
