@@ -1,7 +1,7 @@
 
 # McIntosh Archive Plot
 
-[![Build Status](https://travis-ci.com/scivision/McIntoshArchivePlot.svg?branch=master)](https://travis-ci.com/scivision/McIntoshArchivePlot)
+[![Build Status](https://travis-ci.com/space-physics/McIntoshArchivePlot.svg?branch=master)](https://travis-ci.com/space-physics/McIntoshArchivePlot)
 
 McA Plotting Software: make plots from Final (Level 3) FITS files for McIntosh synoptic maps for a given Carrington rotation (CROT) number.
 Updated code to use standard Astrolib functions and to begin working on GDL (free open-source IDL replacement).
@@ -13,7 +13,7 @@ Updated code to use standard Astrolib functions and to begin working on GDL (fre
 * [data files](https://www.ngdc.noaa.gov/stp/space-weather/solar-data/solar-imagery/composites/synoptic-maps/mc-intosh/ptmc_level3/ptmc_level3_fits/)
 * IDL [Astronomy Library](https://idlastro.gsfc.nasa.gov/) extracted to `~/astrolib`
 * tested with IDL 8.2, 8.4 and 8.6.
-* [GDL](https://www.scivision.co/compiling-gdl-gnudatalanguage-on-ubuntu/) &ge; 0.9.7 required if not using IDL (GDL is free open-source) (GDL 0.9.6 does not work, but 0.9.7 does).  
+* [GDL](https://www.scivision.dev/compiling-gdl-gnudatalanguage-on-ubuntu/) &ge; 0.9.7 required if not using IDL (GDL is free open-source) (GDL 0.9.6 does not work, but 0.9.7 does).  
   Note that `doannot=0` argument to `plotfinal` is required for GDL to make the plot.
 
 ## Usage
