@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.com/scivision/McIntoshArchivePlot.svg?branch=master)](https://travis-ci.com/scivision/McIntoshArchivePlot)
-[![Build status](https://ci.appveyor.com/api/projects/status/rta2e1v6n2ug2696?svg=true)](https://ci.appveyor.com/project/scivision/mcintosharchiveplot)
 
 # McIntosh Archive Plot
+
+[![Build Status](https://travis-ci.com/scivision/McIntoshArchivePlot.svg?branch=master)](https://travis-ci.com/scivision/McIntoshArchivePlot)
 
 McA Plotting Software: make plots from Final (Level 3) FITS files for McIntosh synoptic maps for a given Carrington rotation (CROT) number.
 Updated code to use standard Astrolib functions and to begin working on GDL (free open-source IDL replacement).
